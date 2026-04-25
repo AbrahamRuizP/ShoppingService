@@ -1,0 +1,12 @@
+package com.example.shoppingService.repository;
+
+import com.example.shoppingService.entity.Inventory;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+@Repository
+public interface InventoryRepository extends JpaRepository<Inventory, UUID> {
+    boolean existsByInventory_Name(String name);
+}
